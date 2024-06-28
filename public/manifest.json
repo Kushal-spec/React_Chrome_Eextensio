@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Movie Review Hub",
+  "version": "1.0.0",
+  "description": "This extension helps the user to find the movie review and ratings",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "webNavigation",
+    "scripting",
+    "storage"
+    
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://www.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/search*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+   
+  }
+ 
+
+ 
+}
